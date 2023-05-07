@@ -1,0 +1,374 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #fcfcfc;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dbdbdb;
+}
+.logo a {
+    display: flex;
+    user-select: none;
+    padding: 7px;
+}
+.logo img {
+    height: 50px;
+    max-width: 300px;
+}
+.logo img:hover {
+    filter: sepia(1);
+}
+/* End Header */
+
+
+/* Main */
+main {
+    display: flex;
+    justify-content: center;
+    margin: 46px 14px 90px 14px;
+}
+.main-container {
+    max-width: 990px;
+    width: 100%;
+}
+
+.my-tickets {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    user-select: none;
+}
+.my-tickets a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    color: #8b8b8b;
+    border: 1px solid #dbdbdb;
+    border-radius: 9px;
+    text-decoration: none;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+}
+.my-tickets a:hover {
+    background-color: #f6f6f6;
+}
+.my-tickets a img {
+    filter: invert(46%) sepia(0%) saturate(6746%) hue-rotate(273deg) brightness(115%) contrast(77%);
+    height: 16px;
+    margin-right: 11px;
+}
+
+.raffle {
+    margin-bottom: 32px;
+}
+.main-image {
+    display: flex;
+    border: 1px solid #dbdbdb;
+    border-radius: 12px;
+}
+.main-image img {
+    width: 100%;
+    max-height: 550px;
+    border-radius: 12px;
+    object-fit: cover;
+    user-select: none;
+}
+
+.raffle h2 {
+    font-size: 25px;
+    color: #454545;
+    border-bottom: 1px solid #dbdbdb;
+    padding-bottom: 20px;
+    margin-top: 23px;
+    margin-bottom: 12px;
+}
+
+
+.raffle-organizer {
+    display: flex;
+    align-items: center;
+}
+.organizer-image {
+    display: flex;
+    margin-right: 10px;
+}
+.organizer-image img {
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    user-select: none;
+}
+.organizer-info p {
+    font-size: 14px;
+}
+.organizer-info h4 {
+    font-size: 16px;
+    color: #333333;
+    text-transform: uppercase;
+}
+.organizer-tags {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    margin-top: 6px;
+}
+.organizer-tags img {
+    display: flex;
+    height: 17px;
+    margin-right: 5px;
+}
+.tag {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    background-color: #489f35;
+    border-radius: 15px;
+    padding: 4px 12px;
+    margin-right: 5px;
+    user-select: none;
+}
+.tag span {
+    display: inline-flex;
+    font-size: 14px;
+    color: white;
+}
+
+
+/* tags */
+.suporte {
+    background-color: #489f35;
+}
+.telegram {
+    background-color: #35859f;
+}
+.instagram {
+    background-color: #333333;
+}
+/* tags */
+
+
+.raffle-description, .raffle-ranking, .raffle-tickets, .raffle-payment-method, .raffle-origin {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #dbdbdb;
+    border-radius: 13px;
+    padding: 30px;
+    margin-top: 35px;
+}
+.raffle-description h4, .raffle-ranking h4, .raffle-tickets h4, .raffle-payment-method h4, .raffle-origin h4 {
+    font-size: 15px;
+    color: #7e7e7e;
+    text-transform: uppercase;
+    text-align: center;
+    text-align: -webkit-center;
+    margin-bottom: 28px;
+}
+.podium {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 32px;
+}
+.rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    text-align: center;
+    text-align: -webkit-center;
+    margin: 0 26px;
+}
+.rank img {
+    max-width: 48px;
+    width: 100%;
+    user-select: none;
+    margin-bottom: 10px;
+}
+.rank p {
+    margin-bottom: 3px;
+}
+
+
+.add-tickets-container {
+    display: flex;
+    justify-content: center;
+    color: #656565;
+    margin-top: 28px;
+}
+.add-tickets-box {
+    max-width: 515px;
+    width: 100%;
+}
+.add-tickets {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+.qty-btn {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid #dbdbdb;
+    border-radius: 9px;
+    cursor: pointer;
+    padding: 9px;
+    max-width: 98px;
+    width: 100%;
+    margin-right: 15px;
+    transition: all 0.2s;
+}
+.qty-btn:last-child {
+    margin-right: 0;
+}
+.qty-btn:hover {
+    background-color: #34D894;
+    color: #ffffff;
+    border: 1px solid #34D894;
+    transition: all 0.3s;
+}
+.qty-btn:focus {
+    outline-color: #e55f5f;
+}
+
+
+.quantity-container {
+    display: block;
+    margin-top: 7px;
+}
+.quantity-box {
+    display: flex;
+    justify-content: center;
+}
+.quantity input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    outline: none;
+    max-width: 50px;
+    border: 1px solid #c9c9c9;
+    border-width: 0 1px 0 1px;
+    text-align: center;
+    text-align: -webkit-center;
+}
+.decrease span, .increase span {
+    display: flex;
+    font-size: 16px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+    border: 1px solid #dbdbdb;
+    border-radius: 7px;
+    user-select: none;
+    padding: 7px 20px;
+    transition: all 0.2s;
+}
+#quantityValue {
+    font-size: 16px;
+    outline-color: #489f35;
+    border: 1px solid #dbdbdb;
+    border-radius: 7px;
+    text-align: center;
+    text-align: -webkit-center;
+    max-width: 442px;
+    width: 100%;
+    margin: 0 5px;
+}
+.decrease span:hover {
+    background-color: #d83434;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+.increase span:hover {
+    background-color: #34D894;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    margin-bottom: 16px;
+}
+
+
+.purchase a {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #34d894;
+    color: #ffffff;
+    border-radius: 7px;
+    text-decoration: none;
+    text-transform: uppercase;
+    user-select: none;
+    padding: 9px;
+    transition: all 0.2s;
+}
+.purchase a:hover {
+    background-color: #1ca56c;
+    transition: all 0.3s;
+}
+
+
+.raffle-payment-method h4, .raffle-origin h4 {
+    text-align: left;
+    text-align: -webkit-left;
+}
+.raffle-duals {
+    display: flex;
+}
+.raffle-payment-method, .raffle-origin {
+    width: 100%;
+}
+.raffle-payment-method {
+    margin-right: 12px;
+}
+.raffle-text img {
+    user-select: none;
+    max-width: 100px;
+    width: 100%;
+}
+/* Main */
+
+
+@media (max-width: 900px) {
+    .raffle h2 {
+        font-size: 20px;
+    }
+
+    .raffle-description, .raffle-ranking, .raffle-tickets, .raffle-payment-method, .raffle-origin {
+        font-size: 15px;
+    }
+
+    .podium {
+        justify-content: space-between;
+    }
+    .rank {
+        margin: 0 5px;
+    }
+    .rank p {
+        font-size: 13px;
+    }
+}

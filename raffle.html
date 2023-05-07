@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEFFAO PREMIOS</title>
+    <link rel="stylesheet" href="./css/raffle-dark.css">
+</head>
+<script>
+    // Valor do ticket
+    ticketValue = 0.19;
+</script>
+<body>
+    <div id="overlay-blur-effect"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="./images/logo.svg" alt="Logo" draggable="false">
+            </a>
+        </div>
+    </header>
+    <!-- Header -->
+
+    <!-- Content -->
+    <main>
+        <div class="main-container">
+            <div class="search-tickets-overlay">
+                <form action="">
+                    <div class="search-tickets-container">
+                        <div class="search-tickets-box">
+                            <label for="search-tickets">Buscar bilhetes</label>
+                            <img id="close-search-tickets" src="./images/icons/close-icon.svg" alt="Fechar">
+                            <input id="search-tickets" type="email" placeholder="Digite seu e-mail" required>
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="my-tickets">
+                <a href="#" onclick="toggleSearchTickets()">
+                    <img src="./images/icons/search-icon.svg" draggable="false">
+                    Buscar meus bilhetes
+                </a>
+            </div>
+            <div class="raffle">
+                <div class="main-image">
+                    <img src="https://cdn.everlionllc.com/raffles/r-300000-no-pix-3-mil-no-pix-16829624362505.jpg" alt="Rifa em Destaque">
+                </div>
+                <h2>R$&nbsp10.000,00 no PIX (10 mil no PIX)</h2>
+                <div class="raffle-organizer">
+                    <div class="organizer-image">
+                        <img src="https://portalfamosos.com.br/wp-content/uploads/2021/05/1-116-1520x900.png" alt="Organizador da Rifa">
+                    </div>
+                    <div class="organizer-info">
+                        <p>Organizado por:</p>
+                        <h4>MURILO SOUZA</h4>
+                        <div class="organizer-tags">
+                            <a href="#" target="_blank">
+                                <div class="tag support">
+                                    <img src="./images/icons/whatsapp-icon.svg">
+                                    <span>Suporte</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank">
+                                <div class="tag telegram">
+                                    <img src="./images/icons/telegram-icon.svg">
+                                    <span>Telegram</span>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank">
+                                <div class="tag instagram">
+                                    <img src="./images/icons/instagram-icon.svg">
+                                    <span>Instagram</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="awards">
+                    
+                </div>
+                <div class="raffle-description">
+                    <h4>Descrição / Regulamento</h4>
+                    <p>O vencedor será definido no primeiro prêmio da loteria federal!</p>
+                    <p>O que comprar mais números leva: <b>R$ 300,00</b></p>
+                </div>
+                <div class="raffle-ranking">
+                    <h4>Classificação dos colaboradores</h4>
+                    <div class="podium">
+                        <div class="rank">
+                            <img src="./images/icons/gold-medal.svg" alt="Top 1" draggable="false">
+                            <p>Murilo Oliveira Souza</p>
+                            <p><b>5.000</b> bilhetes</p>
+                        </div>
+                        <div class="rank">
+                            <img src="./images/icons/silver-medal.svg" alt="Top 2" draggable="false">
+                            <p>Vagner Alberto Monteiro</p>
+                            <p><b>3.000</b> bilhetes</p>
+                        </div>
+                        <div class="rank">
+                            <img src="./images/icons/bronze-medal.svg" alt="Top 3" draggable="false">
+                            <p>Jeniffer Pereira Martins</p>
+                            <p><b>1.000</b> bilhetes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="raffle-tickets">
+                    <h4>SELECIONE A QUANTIDADE DE BILHETES</h4>
+                    <section class="add-tickets-container">
+                        <div class="add-tickets-box">
+                            <div class="add-tickets">
+                                <div id="add-one-ticket" class="qty-btn">
+                                    +1
+                                </div>
+                                <div id="add-five-ticket" class="qty-btn">
+                                    +5
+                                </div>
+                                <div id="add-ten-ticket" class="qty-btn">
+                                    +10
+                                </div>
+                                <div id="add-hundred-ticket" class="qty-btn">
+                                    +100
+                                </div>
+                            </div>
+                            <div class="quantity-container">
+                                <div class="quantity-box">
+                                    <div class="decrease" id="decreaseValue">
+                                        <span>-</span>
+                                    </div>
+                                    <input id="quantityValue" type="text" value="1" maxlength="12">
+                                    <div class="increase" id="increaseValue">
+                                        <span>+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total">
+                                <div>Valor final</div>
+                                <div id="total-value">R$ 0,00</div>
+                            </div>
+                            <div class="purchase">
+                                <a href="#">
+                                    Reservar
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="raffle-duals">
+                    <div class="raffle-payment-method">
+                        <h4>Método de Pagamento</h4>
+                        <div class="raffle-text">
+                            <img src="./images/icons/pix-icon.svg" alt="Loterias Caixa" draggable="false">
+                        </div>
+                    </div>
+                    <div class="raffle-origin">
+                        <h4>Sorteio</h4>
+                        <div class="raffle-text">
+                            <img src="./images/icons/loterias-caixa-logo.png" alt="Loterias Caixa" draggable="false">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Content -->
+
+    <script src="./js/search-tickets.js"></script>
+    <script src="./js/add-raffle.js"></script>
+</body>
+</html>
