@@ -141,7 +141,7 @@ main {
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
-    background-color: #030c10;
+    background-color: #152126;
     color: #8b8b8b;
     border: 1px solid #373737;
     border-radius: 9px;
@@ -151,7 +151,7 @@ main {
     margin-bottom: 10px;
 }
 .my-tickets a:hover {
-    background-color: #000000;
+    background-color: #373737;
 }
 .my-tickets a img {
     filter: invert(46%) sepia(0%) saturate(6746%) hue-rotate(273deg) brightness(115%) contrast(77%);
