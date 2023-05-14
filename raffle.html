@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEFFAO PREMIOS</title>
+    <title>SAV AWARDS | Rifa digital</title>
     <link rel="stylesheet" href="./css/raffle-dark.css">
 </head>
 <script>
@@ -28,7 +28,7 @@
     <main>
         <div class="main-container">
             <div class="search-tickets-overlay">
-                <form action="">
+                <form action="#">
                     <div class="search-tickets-container">
                         <div class="search-tickets-box">
                             <label for="search-tickets">Buscar bilhetes</label>
@@ -47,7 +47,8 @@
             </div>
             <div class="raffle">
                 <div class="main-image">
-                    <img src="https://cdn.everlionllc.com/raffles/r-300000-no-pix-3-mil-no-pix-16829624362505.jpg" alt="Rifa em Destaque">
+                    <img src="https://content.megaloterias.com.br/upload/352365_istock-178786888--2-.jpg" alt="Rifa em Destaque">
+                    <div class="main-statement">por <b>R$ 0,19</b> cada número</div>
                 </div>
                 <h2>R$&nbsp10.000,00 no PIX (10 mil no PIX)</h2>
                 <div class="raffle-organizer">
@@ -135,15 +136,32 @@
                                         <span>+</span>
                                     </div>
                                 </div>
+                                <p id="quantity-error">Insira um valor acima de 0</p>
                             </div>
                             <div class="total">
                                 <div>Valor final</div>
                                 <div id="total-value">R$ 0,00</div>
                             </div>
                             <div class="purchase">
-                                <a href="#">
-                                    Reservar
-                                </a>
+                                <div class="purchase-overlay">
+                                    <form action="#">
+                                        <div class="purchase-tickets-container">
+                                            <div class="purchase-tickets-box">
+                                                <img id="close-purchase-tickets" src="./images/icons/close-icon.svg" alt="Fechar">
+                                                <label>Reservar bilhetes</label>
+                                                <input id="full-name" name="full-name" type="text" placeholder="Nome completo" required>
+                                                <input id="email" name="email" type="email" placeholder="E-mail" required>
+                                                <input id="phone-number" name="phone-number" type="text" placeholder="Número de telefone / WhatsApp" required>
+                                                <div class="terms">
+                                                    <input name="terms" type="checkbox" required>
+                                                    <p>Li e concordo com os <a href="#" target="_blank">Termos e Condições</a> e estou ciente de que essa reserva me vincula apenas à esta campanha criada pelo(a) organizador(a) e NÃO à plataforma.</p>
+                                                </div>
+                                                <button type="submit">Reservar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <button href="#" onclick="checkQuantity()">Reservar</button>
                             </div>
                         </div>
                     </section>
@@ -167,7 +185,13 @@
     </main>
     <!-- Content -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+    <script>
+        // Phone Number Mask
+        VMasker(document.getElementById("phone-number")).maskPattern("(99) 99999-9999");
+    </script>
     <script src="./js/search-tickets.js"></script>
     <script src="./js/add-raffle.js"></script>
+    <script src="./js/purchase-tickets.js"></script>
 </body>
 </html>

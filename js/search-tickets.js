@@ -1,27 +1,34 @@
 const searchTicketsContainer = document.querySelectorAll('.search-tickets-container');
-const closeBtn = document.getElementById('close-search-tickets');
-const overlayBlurEffect = document.getElementById('overlay-blur-effect');
+const closeSearchBtn = document.getElementById('close-search-tickets');
+// Overlay - Blur
+var overlayBlurEffect = document.getElementById('overlay-blur-effect');
 
 function toggleSearchTickets() {
+    document.body.style.overflow = 'hidden'
     searchTicketsContainer.forEach(element => {
-        element.style.top = '65px';
+        element.style.top = '33vh';
     });
 
-    overlayBlurEffect.style.display = 'block'
+    overlayBlurEffect.style.opacity = '1'
+    overlayBlurEffect.style.visibility = 'visible'
 }
 
-closeBtn.addEventListener("click", ()=> {
+closeSearchBtn.addEventListener("click", ()=> {
+    document.body.style.overflow = 'overlay'
     searchTicketsContainer.forEach(element => {
-        element.style.top = '-250px';
+        element.style.top = '-300px';
     });
 
-    overlayBlurEffect.style.display = 'none'
+    overlayBlurEffect.style.opacity = '0'
+    overlayBlurEffect.style.visibility = 'hidden'
 });
 
 overlayBlurEffect.addEventListener("click", ()=> {
+    document.body.style.overflow = 'overlay'
     searchTicketsContainer.forEach(element => {
-        element.style.top = '-250px';
+        element.style.top = '-300px';
     });
 
-    overlayBlurEffect.style.display = 'none'
+    overlayBlurEffect.style.opacity = '0'
+    overlayBlurEffect.style.visibility = 'hidden'
 });

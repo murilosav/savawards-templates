@@ -48,6 +48,9 @@ quantityValueInput.addEventListener('input', () => {
 // increment quantity
 function incrementQuantity(value) {
   let currentQuantity = parseInt(quantityValueInput.value);
+  if (isNaN(currentQuantity)) {
+    currentQuantity = 0;
+  }
   currentQuantity += value;
   quantityValueInput.value = currentQuantity;
   updateTotalValue();
@@ -66,14 +69,14 @@ function decrementQuantity() {
 // Update the total amount
 function updateTotalValue() {
   let quantity = parseInt(quantityValueInput.value);
-  if (isNaN(quantity) || quantity < 1) {
+  if (isNaN(quantity)) {
     quantity = 1;
-    quantityValueInput.value = quantity;
   }
   const total = (ticketValue * quantity).toFixed(2);
   const formattedTotal = parseFloat(total).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   totalValueDiv.textContent = formattedTotal;
 }
+
 
 // Initialize with the total value based on the default value of the quantity field
 updateTotalValue();

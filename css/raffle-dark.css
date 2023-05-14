@@ -6,6 +6,7 @@
 
 body {
     background-color: #18262d;
+    overflow: overlay;
 }
 
 
@@ -26,9 +27,11 @@ header {
 .logo img {
     height: 28px;
     max-width: 300px;
+    transition: all 0.2s;
 }
 .logo img:hover {
-    filter: sepia(1);
+    filter: grayscale(1);
+    transition: all 0.2s;
 }
 /* End Header */
 
@@ -46,8 +49,9 @@ main {
 
 
 #overlay-blur-effect {
-    display: none;
-    backdrop-filter: blur(62px);
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(11px);
     user-select: none;
     height: 100%;
     width: 100%;
@@ -59,13 +63,16 @@ main {
     right: 0;
     opacity: .6;
 }
+
+
 .search-tickets-container {
     position: fixed;
     left: 0;
     right: 0;
-    top: -250px;
-    display: flex;
-    justify-content: center;
+    top: -300px;
+    width: 100%;
+    max-width: 563px;
+    margin: auto;
     z-index: 10;
     transition: all 0.5s;
 }
@@ -74,7 +81,7 @@ main {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    background-color: #181d24;
+    background-color: #232e3d;
     color: #ffffff;
     box-shadow: 0 0 18px -14px #000000;
     border-radius: 10px;
@@ -92,21 +99,25 @@ main {
     outline-color: #39da97;
     border: none;
     border-radius: 6px;
+    user-select: none;
     padding: 10px 15px;
 }
 .search-tickets-box button {
+    display: flex;
+    justify-content: center;
     font-size: 15px;
-    color: #ffffff;
-    font-weight: 500;
-    background-color: #39da97;
-    user-select: none;
+    font-weight: 600;
+    background-color: rgb(52, 216, 148);
+    color: rgb(255, 255, 255);
+    border-radius: 7px;
     cursor: pointer;
-    outline: none;
     border: none;
-    border-radius: 6px;
-    padding: 10px 15px;
+    text-transform: uppercase;
+    user-select: none;
+    width: 100%;
+    padding: 9px;
+    transition: all 0.2s ease 0s;
     margin-top: 20px;
-    transition: opacity 0.2s;
 }
 .search-tickets-box button:hover {
     opacity: 0.7;
@@ -141,7 +152,7 @@ main {
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
-    background-color: #152126;
+    background-color: #ffffff;
     color: #8b8b8b;
     border: 1px solid #373737;
     border-radius: 9px;
@@ -149,9 +160,11 @@ main {
     width: 100%;
     padding: 12px 20px;
     margin-bottom: 10px;
+    transition: all 0.2s;
 }
 .my-tickets a:hover {
-    background-color: #373737;
+    opacity: 0.4;
+    transition: all 0.2s;
 }
 .my-tickets a img {
     filter: invert(46%) sepia(0%) saturate(6746%) hue-rotate(273deg) brightness(115%) contrast(77%);
@@ -163,6 +176,7 @@ main {
     margin-bottom: 32px;
 }
 .main-image {
+    position: relative;
     display: flex;
     border: 1px solid #373737;
     border-radius: 12px;
@@ -174,6 +188,24 @@ main {
     object-fit: cover;
     user-select: none;
 }
+.main-statement {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1c1c1c;
+    background: #ffffff;
+    border-radius: 10px;
+    user-select: none;
+    padding: 11px 21px;
+}
+.main-statement b {
+    color: #68a543;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
 
 .raffle h2 {
     font-size: 25px;
@@ -406,7 +438,107 @@ main {
 }
 
 
-.purchase a {
+.purchase-tickets-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -700px;
+    width: 100%;
+    max-width: 563px;
+    margin: auto;
+    z-index: 10;
+    transition: all 0.5s;
+}
+.purchase-tickets-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #232e3d;
+    color: #ffffff;
+    box-shadow: 0 0 18px -14px #000000;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 563px;
+    padding: 28px 23px;
+}
+.purchase-tickets-box label {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 21px;
+}
+.purchase-tickets-box input {
+    font-size: 16px;
+    outline-color: #39da97;
+    border: none;
+    border-radius: 6px;
+    user-select: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+}
+.purchase-tickets-box button {
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #39da97;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    transition: opacity 0.2s;
+}
+.purchase-tickets-box button:hover {
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+#close-purchase-tickets {
+    filter: invert(100%) sepia(5%) saturate(18%) hue-rotate(159deg) brightness(102%) contrast(102%);
+    position: absolute;
+    right: 27px;
+    top: 23px;
+    height: 18px;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.1s;
+}
+#close-purchase-tickets:hover {
+    opacity: 0.5;
+    transition: opacity 0.1s;
+}
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    margin: 26px 10px 0 10px;
+}
+.terms input {
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #ffffff;
+    outline: 2px solid #333;
+    border: 2px solid #ffffff;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    padding: 7px;
+    margin: 2px 9px 0 0;
+}
+.terms input:checked {
+    background: #34d894;
+}
+.terms p {
+    font-size: 14px;
+}
+.terms p a {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.purchase button {
     display: flex;
     justify-content: center;
     font-size: 15px;
@@ -414,15 +546,25 @@ main {
     background-color: #34d894;
     color: #ffffff;
     border-radius: 7px;
-    text-decoration: none;
+    cursor: pointer;
+    border: none;
     text-transform: uppercase;
     user-select: none;
+    width: 100%;
     padding: 9px;
     transition: all 0.2s;
 }
-.purchase a:hover {
+.purchase button:hover {
     background-color: #1ca56c;
     transition: all 0.3s;
+}
+
+#quantity-error {
+    display: none;
+    color: red;
+    text-align: center;
+    text-align: -webkit-center;
+    margin-top: 17px;
 }
 
 
@@ -451,10 +593,16 @@ main {
     .raffle h2 {
         font-size: 20px;
     }
-
     .raffle-description, .raffle-ranking, .raffle-tickets, .raffle-payment-method, .raffle-origin {
         font-size: 15px;
     }
+
+
+    .main-statement {
+        font-size: 13px;
+        padding: 8px 17px;
+    }
+    
 
     .podium {
         justify-content: space-between;
