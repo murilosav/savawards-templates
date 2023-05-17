@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAV AWARDS | Checkout</title>
+    <link rel="stylesheet" href="./css/transaction_pix.css">
+</head>
+
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="./images/logo.svg" alt="Logo" draggable="false">
+            </a>
+        </div>
+    </header>
+    <!-- Header -->
+    <main>
+        <div class="pix-container">
+            <div class="payment">
+                <p>Abra seu aplicativo de pagamento onde você utiliza o Pix e escolha a opção <b>Ler QR Code</b></p>
+                <div class="qrcode-info">
+                    <img src="./images/icons/cellphone-icon.svg" draggable="false">
+                    <span>Aponte a câmera do seu celular</span>
+                </div>
+                <div class="qrcode">
+                    <img src="data:image/png;base64,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" alt="QR CODE">
+                </div>
+                <div class="pix-value">
+                    <span>Valor do Pix:</span>
+                    <strong>R$ 405,95</strong>
+                </div>
+                <div class="pix-copy-and-past">
+                    <span>Você também pode pagar escolhendo a opção <b>Pix Copia e Cola</b> no seu aplicativo de pagamento ou Internet Banking (banco online). Neste caso, copie o código abaixo:</span>
+                    <div class="qrcode-text">
+                        <img id="copy" src="./images/icons/copy-icon.svg" alt="Copiar" draggable="false">
+                        <div id="copied-code">Código copiado.</div>
+                        <p id="qrcode-text">00020126350014BR.GOV.BCB.PIX0113SDFDFDFD-SF445204000053039865802BR5910dssfsfdsds6005sdsdf610845242-42462110507dsffff363041815</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('copy').addEventListener('click', function() {
+            var qrcodeText = document.getElementById('qrcode-text');
+            var copiedCodeBox = document.getElementById('copied-code');
+            navigator.clipboard.writeText(qrcodeText.textContent).then(function() {
+                qrcodeText.style.filter = 'blur(1px)';
+
+                copiedCodeBox.style.visibility = 'visible';
+                copiedCodeBox.style.opacity = '0.9';
+                copiedCodeBox.style.transition = 'all 0.3s';
+
+                // remove style after 2s
+                setTimeout(function() {
+                qrcodeText.style.filter = '';
+                copiedCodeBox.style.visibility = '';
+                copiedCodeBox.style.opacity = '';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

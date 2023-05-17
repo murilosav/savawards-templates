@@ -65,6 +65,7 @@ main {
 }
 .info span, b {
     font-size: 16px;
+    color: #373737;
 }
 .see-tickets {
     display: flex;
@@ -72,12 +73,12 @@ main {
     font-size: 17px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #000000;
+    color: #373737;
     border-radius: 7px;
     cursor: pointer;
     user-select: none;
-    padding: 8px;
-    margin-top: 20px;
+    padding: 12px;
+    margin-top: 12px;
     transition: all 0.2s;
 }
 .see-tickets:hover {
@@ -95,7 +96,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    transition: all 0.4s;
+    transition: margin 0.4s;
 }
 .ticket-numbers p {
     font-size: 15px;
@@ -140,10 +141,18 @@ main {
     user-select: none;
     padding: 11px;
     margin-top: 20px;
+    transition: all 0.2s;
+}
+.purchase span:hover {
+    background-color: #168a5b;
+    transition: all 0.3s;
 }
 /* Main */
 
 
 @media (max-width: 900px) {
-
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
 }

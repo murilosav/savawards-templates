@@ -598,6 +598,15 @@ main {
     }
 
 
+    .my-tickets a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    .my-tickets a img {
+        height: 14px;
+    }
+
+
     .main-statement {
         font-size: 13px;
         padding: 8px 17px;
