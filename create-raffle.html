@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAV AWARDS | Admin</title>
+    <link rel="stylesheet" href="./css/create-raffle.css">
+</head>
+
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="./images/logo.svg" alt="Logo" draggable="false">
+            </a>
+        </div>
+    </header>
+    <!-- Header -->
+    
+    <main>
+        <div class="main-container">
+            <div class="container-actions">
+                <section class="main-actions">
+                    <div class="field">
+                        <label for="title">Título:</label>
+                        <input id="title" name="title" type="text" placeholder="EX: Iphone 14 256gb IOS" required>
+                    </div>
+                    <div class="field">
+                        <label for="description">Descrição:</label>
+                        <input id="description" name="description" type="text" placeholder="Mais detalhes sobre sua rifa" required>
+                    </div>
+                    <div class="field checkbox">
+                        <label for="ranking">Habilitar classificação dos colaboradores:</label>
+                        <input id="ranking" name="ranking" type="checkbox" placeholder="EX: 1 mil reais no PIX">
+                    </div>
+                    <div class="dual-field">
+                        <h3>Adicionar links:</h3>
+                        <div class="field link">
+                            <label for="support">Suporte no Whatsapp</label>
+                            <div class="duo">
+                                <input id="support" name="support" type="text" placeholder="(00) 00000-0000">
+                                <button type="submit">Add link</button>
+                            </div>
+                        </div>
+                        <div class="field link">
+                            <label for="telegram">Telegram</label>
+                            <div class="duo">
+                                <input id="telegram" name="telegram" type="text" placeholder="@nomedeusuario" maxlength="36">
+                                <button type="submit">Add link</button>
+                            </div>
+                        </div>
+                        <div class="field link">
+                            <label for="instagram">Instagram</label>
+                            <div class="duo">
+                                <input id="instagram" name="instagram" type="text" placeholder="@nomedeusuario" maxlength="31">
+                                <button type="submit">Add link</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="submit">
+                    <button type="submit">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
+    <script>
+        // Phone Number Mask
+        VMasker(document.getElementById("support")).maskPattern("(99) 99999-9999");
+
+        // Função para aplicar a máscara e validar a entrada
+function applyMaskAndValidateInput(inputId) {
+  const inputElement = document.getElementById(inputId);
+  const validRegex = /^[A-Za-z0-9_.]+$/; // Regex para validar o username
+
+  // Aplica a máscara e valida a entrada a cada alteração no input
+  inputElement.addEventListener('input', function() {
+    const inputValue = inputElement.value;
+    const maskedValue = inputValue.replace(/[^A-Za-z0-9_.]/g, ''); // Remove caracteres inválidos
+
+    if (validRegex.test(maskedValue)) {
+      inputElement.value = `@${maskedValue}`;
+    } else {
+      inputElement.value = '';
+    }
+  });
+}
+
+// Aplica a máscara e validação em tempo real nos inputs
+applyMaskAndValidateInput('instagram');
+applyMaskAndValidateInput('telegram');
+
+    </script>
+</body>
+</html>

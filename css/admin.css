@@ -6,14 +6,18 @@
 
 body {
     background-color: #18262d;
+    overflow: overlay;
 }
 
 
 /* Header */
 header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background-color: #18262d;
+    align-items: center;
+    background-color: #152126;
+    border-bottom: 1px solid #373737;
 }
 .logo a {
     display: flex;
@@ -21,11 +25,13 @@ header {
     padding: 20px;
 }
 .logo img {
-    height: 30px;
+    height: 28px;
     max-width: 300px;
+    transition: all 0.2s;
 }
 .logo img:hover {
-    filter: sepia(1);
+    filter: grayscale(1);
+    transition: all 0.2s;
 }
 /* End Header */
 
@@ -34,29 +40,48 @@ header {
 main {
     display: flex;
     justify-content: center;
-    margin-top: 46px;
-    margin-bottom: 90px;
+    margin: 46px 14px 90px 14px;
 }
 .main-container {
     max-width: 990px;
     width: 100%;
 }
-.main-raffle {
-    border: 1px solid #373737;
-    border-radius: 12px;
-    margin-bottom: 32px;
+
+
+.add-raffle a {
+    color: #ffffff;
+    text-decoration: none;
 }
-.main-image {
-    display: flex;
-}
-.main-image img {
-    width: 100%;
-    max-height: 400px;
-    border-radius: 12px 12px 0 0;
-    object-fit: cover;
+.btn-add-raffle {
+    display: inline-flex;
+    align-items: center;
+    background-color: #13bb75;
+    border-radius: 6px;
     user-select: none;
+    padding: 10px 25px;
+    transition: all 0.2s;
+}
+.btn-add-raffle:hover {
+    background-color: #34D894;
+    transition: all 0.2s;
+}
+.btn-add-raffle:active {
+    opacity: 1;
+    background-color: #13bb75;
+}
+.btn-add-raffle img {
+    filter: invert(90%) sepia(100%) saturate(0%) hue-rotate(90deg) brightness(101%) contrast(103%);
+    height: 15px;
+    margin-right: 7px;
+}
+.btn-add-raffle span {
+    font-size: 15px;
 }
 
+
+.raffles {
+    margin-top: 18px;
+}
 .info {
     background-color: #152126;
     border-radius: 0 0 12px 12px;
@@ -82,7 +107,6 @@ main {
     margin-top: 4px;
     margin-bottom: 10px;
 }
-
 
 .available {
     display: inline-block;
@@ -127,13 +151,14 @@ main {
     }
 }
 
-
-.go-to img {
+.edit-raffle img {
     height: 24px;
     filter: invert(100%) sepia(5%) saturate(596%) hue-rotate(213deg) brightness(113%) contrast(93%);
     user-select: none;
 }
-
+.edit-raffle:hover {
+    opacity: 0.5;
+}
 
 .sc {
     border: 1px solid #373737;
@@ -163,8 +188,11 @@ main {
     margin-right: 16px;
 }
 
-
 @media (max-width: 901px) {
+    .btn-add-raffle span {
+        font-size: 14px;
+    }
+
     .main-description h4 {
         font-size: 14px;
     }
