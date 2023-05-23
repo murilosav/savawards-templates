@@ -558,6 +558,27 @@ main {
     background-color: #1ca56c;
     transition: all 0.3s;
 }
+.purchase-submit-btn {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #34d894;
+    color: #ffffff;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    user-select: none;
+    margin-top: 20px;
+    padding: 9px;
+    transition: all 0.2s;
+}
+.purchase-submit-btn:hover {
+    background-color: #1ca56c;
+    transition: all 0.3s;
+}
 
 #quantity-error {
     display: none;
