@@ -48,11 +48,17 @@ main {
 }
 
 
+.unique-field {
+    margin-bottom: 77px;
+}
+.more-field {
+    margin-bottom: 77px;
+}
 .field {
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    margin-bottom: 77px;
+    margin-bottom: 20px;
 }
 .field label {
     font-size: 17px;
@@ -125,18 +131,23 @@ main {
     transition: all 0.3s;
 }
 
-.submit {
+
+#receive {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+
+.buttons {
     display: inline-flex;
     float: right;
     margin-top: 54px;
 }
-.submit button {
+.buttons button {
     display: flex;
     justify-content: center;
     font-size: 15px;
     font-weight: 600;
-    background-color: #34d894;
-    color: #ffffff;
     border-radius: 7px;
     cursor: pointer;
     border: none;
@@ -146,8 +157,21 @@ main {
     padding: 9px;
     transition: all 0.2s;
 }
-.submit button:hover {
+.submit {
+    background-color: #34d894;
+    color: #ffffff;
+}
+.submit:hover {
     background-color: #1ca56c;
+    transition: all 0.3s;
+}
+.cancel-btn {
+    background-color: #858585;
+    color: #ffffff;
+    margin-right: 5px;
+}
+.cancel-btn:hover {
+    background-color: #5a5a5a;
     transition: all 0.3s;
 }
 /* Main */

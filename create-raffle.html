@@ -24,17 +24,32 @@
         <div class="main-container">
             <div class="container-actions">
                 <section class="main-actions">
-                    <div class="field">
-                        <label for="title">Título:</label>
-                        <input id="title" name="title" type="text" placeholder="EX: Iphone 14 256gb IOS" required>
+                    <div class="more-field">
+                        <div class="field">
+                            <label for="title">Título:</label>
+                            <input id="title" name="title" type="text" placeholder="EX: Iphone 14 256gb IOS" maxlength="150" required>
+                        </div>
+                        <div class="field">
+                            <label for="description">Descrição:</label>
+                            <input id="description" name="description" type="text" placeholder="Mais detalhes sobre sua rifa" maxlength="1000" required>
+                        </div>
                     </div>
-                    <div class="field">
-                        <label for="description">Descrição:</label>
-                        <input id="description" name="description" type="text" placeholder="Mais detalhes sobre sua rifa" required>
+                    <div class="more-field">
+                        <div class="field">
+                            <label for="raffle-price">Valor do número da rifa:</label>
+                            <input style="max-width: 400px;" id="raffle-price" name="raffle-price" type="text" placeholder="R$ 0,00" required>
+                        </div>
+                        <div class="field">
+                            <label for="qty-tickets">Quantidade de bilhetes:</label>
+                            <input style="max-width: 400px;" id="qty-tickets" name="qty-tickets" type="text" placeholder="0" required>
+                        </div>
+                        <div id="receive">R$ 4.000,90</div>
                     </div>
-                    <div class="field checkbox">
-                        <label for="ranking">Habilitar classificação dos colaboradores:</label>
-                        <input id="ranking" name="ranking" type="checkbox" placeholder="EX: 1 mil reais no PIX">
+                    <div class="unique-field">
+                        <div class="field checkbox">
+                            <label for="ranking">Habilitar classificação dos colaboradores:</label>
+                            <input id="ranking" name="ranking" type="checkbox" placeholder="EX: 1 mil reais no PIX">
+                        </div>
                     </div>
                     <div class="dual-field">
                         <h3>Adicionar links:</h3>
@@ -61,8 +76,9 @@
                         </div>
                     </div>
                 </section>
-                <div class="submit">
-                    <button type="submit">Salvar</button>
+                <div class="buttons">
+                    <button class="cancel-btn">Cancelar</button>
+                    <button class="submit" type="submit">Salvar</button>
                 </div>
             </div>
         </div>
@@ -70,30 +86,70 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js"></script>
     <script>
-        // Phone Number Mask
+        // Phone Number mask
         VMasker(document.getElementById("support")).maskPattern("(99) 99999-9999");
+        // Quantity of tickets
+        VMasker(document.getElementById("qty-tickets")).maskNumber();
+        
+
+        // Masking input element to money with options.
+        VMasker(document.getElementById("raffle-price")).maskMoney({
+            separator: ',',
+            delimiter: '.',
+            unit: 'R$',
+            zeroCents: false
+        });
+        // Masking an array of input elements to money.
+        VMasker(document.querySelectorAll("raffle-price")).maskMoney();
+        // Converts number to money string
+        VMasker.toMoney(1234); // -> R$ 1.234,00
+
 
         // Função para aplicar a máscara e validar a entrada
-function applyMaskAndValidateInput(inputId) {
-  const inputElement = document.getElementById(inputId);
-  const validRegex = /^[A-Za-z0-9_.]+$/; // Regex para validar o username
+        function applyMaskAndValidateInput(inputId) {
+        const inputElement = document.getElementById(inputId);
+        const validRegex = /^[A-Za-z0-9_.]+$/; // Regex para validar o username
 
-  // Aplica a máscara e valida a entrada a cada alteração no input
-  inputElement.addEventListener('input', function() {
-    const inputValue = inputElement.value;
-    const maskedValue = inputValue.replace(/[^A-Za-z0-9_.]/g, ''); // Remove caracteres inválidos
+        // Aplica a máscara e valida a entrada a cada alteração no input
+        inputElement.addEventListener('input', function() {
+            const inputValue = inputElement.value;
+            const maskedValue = inputValue.replace(/[^A-Za-z0-9_.]/g, ''); // Remove caracteres inválidos
 
-    if (validRegex.test(maskedValue)) {
-      inputElement.value = `@${maskedValue}`;
-    } else {
-      inputElement.value = '';
-    }
-  });
-}
+            if (validRegex.test(maskedValue)) {
+            inputElement.value = `@${maskedValue}`;
+            } else {
+            inputElement.value = '';
+            }
+        });
+        }
 
-// Aplica a máscara e validação em tempo real nos inputs
-applyMaskAndValidateInput('instagram');
-applyMaskAndValidateInput('telegram');
+        // Aplica a máscara e validação em tempo real nos inputs
+        applyMaskAndValidateInput('instagram');
+        applyMaskAndValidateInput('telegram');
+
+
+        // Obtendo os elementos de entrada e o elemento de exibição do resultado
+        var rafflePriceInput = document.getElementById("raffle-price");
+        var qtyTicketsInput = document.getElementById("qty-tickets");
+        var receiveElement = document.getElementById("receive");
+
+        rafflePriceInput.addEventListener("input", calculateResult);
+        qtyTicketsInput.addEventListener("input", calculateResult);
+
+        function calculateResult() {
+        var rafflePriceValue = parseFloat(rafflePriceInput.value.replace("R$", "").replace(".", "").replace(",", "."));
+        var qtyTicketsValue = parseInt(qtyTicketsInput.value);
+
+        if (!isNaN(rafflePriceValue) && !isNaN(qtyTicketsValue)) {
+            var result = rafflePriceValue * qtyTicketsValue;
+
+            var formattedResult = "R$ " + result.toFixed(2).replace(".", ",");
+
+            receiveElement.textContent = formattedResult;
+        } else {
+            receiveElement.textContent = "Valores inválidos";
+        }
+        }
 
     </script>
 </body>
