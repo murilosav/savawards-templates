@@ -249,6 +249,9 @@ main {
     text-decoration: none;
     margin-top: 6px;
 }
+.organizer-tags a {
+    text-decoration: none;
+}
 .organizer-tags img {
     display: flex;
     height: 17px;
@@ -703,7 +706,7 @@ main {
         margin: 0 5px;
     }
     .rank p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .qty-btn {
