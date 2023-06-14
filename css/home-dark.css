@@ -21,7 +21,7 @@ header {
     padding: 20px;
 }
 .logo img {
-    height: 30px;
+    height: 28px;
     max-width: 300px;
 }
 .logo img:hover {
@@ -40,6 +40,7 @@ main {
 .main-container {
     max-width: 990px;
     width: 100%;
+    margin: 0 7px;
 }
 .main-raffle {
     border: 1px solid #373737;

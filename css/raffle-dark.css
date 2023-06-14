@@ -644,3 +644,85 @@ main {
         font-size: 13px;
     }
 }
+
+
+@media (max-width: 700px) {
+    .search-tickets-box label {
+        font-size: 16px;
+    }
+    .search-tickets-box input {
+        font-size: 14px;
+    }
+    .search-tickets-box button {
+        font-size: 14px;
+    }
+
+
+    .raffle h2 {
+        font-size: 18px;
+    }
+    .raffle-description, .raffle-ranking, .raffle-tickets, .raffle-payment-method, .raffle-origin {
+        font-size: 12px;
+    }
+
+    .raffle-description h4, .raffle-ranking h4, .raffle-tickets h4, .raffle-payment-method h4, .raffle-origin h4 {
+        font-size: 13px;
+    }
+
+
+    .my-tickets a {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+    .my-tickets a img {
+        height: 13px;
+    }
+
+
+    .main-statement {
+        font-size: 12px;
+        padding: 8px 17px;
+    }
+    
+
+    .organizer-info p {
+        font-size: 12px;
+    }
+    .organizer-info h4 {
+        font-size: 14px;
+    }
+
+    .tag span {
+        font-size: 11px;
+    }
+
+    .podium {
+        justify-content: space-between;
+    }
+    .rank {
+        margin: 0 5px;
+    }
+    .rank p {
+        font-size: 13px;
+    }
+
+    .qty-btn {
+        font-size: 14px;
+    }
+    .purchase button {
+        font-size: 14px;
+    }
+
+    .purchase-tickets-box label {
+        font-size: 16px;
+    }
+    .purchase-tickets-box input {
+        font-size: 14px;
+    }
+    .terms p, .terms p a {
+        font-size: 12px;
+    }
+    .purchase-submit-btn {
+        font-size: 14px;
+    }
+}
