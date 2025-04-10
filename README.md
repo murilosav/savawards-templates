@@ -2,7 +2,8 @@
 
 **Savawards Templates** é um template **front-end moderno e responsivo** para a criação de uma **plataforma de rifas online**. Ideal para desenvolvedores que desejam acelerar o processo de desenvolvimento de uma aplicação de sorteios digitais com uma base sólida e personalizável.
 
-[🔗 Visualizar Projeto Online](https://murilosav.github.io/savawards-templates/)
+[🔗 Visualizar Site de Rifas Online](https://murilosav.github.io/savawards-templates/) 
+[🔗 Visualizar Dashboard Administrativa](https://murilosav.github.io/savawards-templates/admin_dashboard/dashboard-admin.html)
 
 ---
 
