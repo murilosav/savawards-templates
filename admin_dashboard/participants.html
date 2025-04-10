@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Participantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_dashboard/participants.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Participantes da Rifa</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Rifa</th>
+          <th>Status</th>
+          <th>Data</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Nome">João da Silva</td>
+          <td data-label="Email">joao@email.com</td>
+          <td data-label="Rifa">Playstation 5</td>
+          <td data-label="Status"><span class="status paid">Pago</span></td>
+          <td data-label="Data">20/06/2024</td>
+          <td data-label="Ação">
+            <button class="view-btn"
+              onclick="openModal('João da Silva', 'joao@email.com', 'Playstation 5', ['025', '108', '237'])">Ver
+              números</button>
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Nome">Maria Oliveira</td>
+          <td data-label="Email">maria@email.com</td>
+          <td data-label="Rifa">iPhone 15</td>
+          <td data-label="Status"><span class="status pending">Pendente</span></td>
+          <td data-label="Data">21/06/2024</td>
+          <td data-label="Ação">
+            <button class="view-btn" onclick="openModal('Maria Oliveira', 'maria@email.com', 'iPhone 15', ['009'])">Ver
+              números</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="participantModal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">×</button>
+      <h2 id="modalName">Participante</h2>
+      <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+      <p><strong>Rifa:</strong> <span id="modalRaffle"></span></p>
+      <p><strong>Números:</strong></p>
+      <div class="numbers" id="modalNumbers"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(name, email, raffle, numbers) {
+      document.getElementById('modalName').textContent = name;
+      document.getElementById('modalEmail').textContent = email;
+      document.getElementById('modalRaffle').textContent = raffle;
+
+      const numberContainer = document.getElementById('modalNumbers');
+      numberContainer.innerHTML = '';
+      numbers.forEach(num => {
+        const span = document.createElement('span');
+        span.className = 'number';
+        span.textContent = num;
+        numberContainer.appendChild(span);
+      });
+
+      document.getElementById('participantModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('participantModal').style.display = 'none';
+    }
+  </script>
+</body>
+
+</html>

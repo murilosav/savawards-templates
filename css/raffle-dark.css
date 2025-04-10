@@ -19,20 +19,24 @@ header {
     background-color: #152126;
     border-bottom: 1px solid #373737;
 }
+
 .logo a {
     display: flex;
     user-select: none;
     padding: 20px;
 }
+
 .logo img {
     height: 28px;
     max-width: 300px;
     transition: all 0.2s;
 }
+
 .logo img:hover {
     filter: grayscale(1);
     transition: all 0.2s;
 }
+
 /* End Header */
 
 
@@ -42,6 +46,7 @@ main {
     justify-content: center;
     margin: 46px 14px 90px 14px;
 }
+
 .main-container {
     max-width: 990px;
     width: 100%;
@@ -76,6 +81,7 @@ main {
     z-index: 10;
     transition: all 0.5s;
 }
+
 .search-tickets-box {
     position: relative;
     display: flex;
@@ -89,11 +95,13 @@ main {
     max-width: 563px;
     padding: 28px 23px;
 }
+
 .search-tickets-box label {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 34px;
 }
+
 .search-tickets-box input {
     font-size: 16px;
     outline-color: #39da97;
@@ -102,6 +110,7 @@ main {
     user-select: none;
     padding: 10px 15px;
 }
+
 .search-tickets-box button {
     display: flex;
     justify-content: center;
@@ -119,10 +128,12 @@ main {
     transition: all 0.2s ease 0s;
     margin-top: 20px;
 }
+
 .search-tickets-box button:hover {
     opacity: 0.7;
     transition: opacity 0.2s;
 }
+
 #close-search-tickets {
     filter: invert(100%) sepia(5%) saturate(18%) hue-rotate(159deg) brightness(102%) contrast(102%);
     position: absolute;
@@ -133,6 +144,7 @@ main {
     user-select: none;
     transition: opacity 0.1s;
 }
+
 #close-search-tickets:hover {
     opacity: 0.5;
     transition: opacity 0.1s;
@@ -145,6 +157,7 @@ main {
     width: 100%;
     user-select: none;
 }
+
 .my-tickets a {
     display: flex;
     justify-content: center;
@@ -162,10 +175,12 @@ main {
     margin-bottom: 10px;
     transition: all 0.2s;
 }
+
 .my-tickets a:hover {
     opacity: 0.4;
     transition: all 0.2s;
 }
+
 .my-tickets a img {
     filter: invert(46%) sepia(0%) saturate(6746%) hue-rotate(273deg) brightness(115%) contrast(77%);
     height: 16px;
@@ -175,12 +190,14 @@ main {
 .raffle {
     margin-bottom: 32px;
 }
+
 .main-image {
     position: relative;
     display: flex;
     border: 1px solid #373737;
     border-radius: 12px;
 }
+
 .main-image img {
     width: 100%;
     max-height: 550px;
@@ -188,6 +205,7 @@ main {
     object-fit: cover;
     user-select: none;
 }
+
 .main-statement {
     position: absolute;
     bottom: 7px;
@@ -200,6 +218,7 @@ main {
     user-select: none;
     padding: 11px 21px;
 }
+
 .main-statement b {
     color: #68a543;
     font-weight: 500;
@@ -221,10 +240,12 @@ main {
     display: flex;
     align-items: center;
 }
+
 .organizer-image {
     display: flex;
     margin-right: 10px;
 }
+
 .organizer-image img {
     object-fit: cover;
     height: 80px;
@@ -233,15 +254,18 @@ main {
     border-radius: 50%;
     user-select: none;
 }
+
 .organizer-info p {
     font-size: 14px;
     color: #cacaca;
 }
+
 .organizer-info h4 {
     font-size: 16px;
     color: #ffffff;
     text-transform: uppercase;
 }
+
 .organizer-tags {
     display: flex;
     flex-wrap: wrap;
@@ -249,14 +273,17 @@ main {
     text-decoration: none;
     margin-top: 6px;
 }
+
 .organizer-tags a {
     text-decoration: none;
 }
+
 .organizer-tags img {
     display: flex;
     height: 17px;
     margin-right: 5px;
 }
+
 .tag {
     display: inline-flex;
     align-items: center;
@@ -269,10 +296,12 @@ main {
     user-select: none;
     transition: opacity 0.2s;
 }
+
 .tag:hover {
     opacity: 0.5;
     transition: opacity 0.2s;
 }
+
 .tag span {
     display: inline-flex;
     font-size: 14px;
@@ -284,16 +313,23 @@ main {
 .support {
     background-color: #489f35;
 }
+
 .telegram {
     background-color: #30a6e0;
 }
+
 .instagram {
     background-color: #333333;
 }
+
 /* tags */
 
 
-.raffle-description, .raffle-ranking, .raffle-tickets, .raffle-payment-method, .raffle-origin {
+.raffle-description,
+.raffle-ranking,
+.raffle-tickets,
+.raffle-payment-method,
+.raffle-origin {
     background-color: #152126;
     color: #e9e9e9;
     border: 1px solid #373737;
@@ -301,7 +337,12 @@ main {
     padding: 30px;
     margin-top: 35px;
 }
-.raffle-description h4, .raffle-ranking h4, .raffle-tickets h4, .raffle-payment-method h4, .raffle-origin h4 {
+
+.raffle-description h4,
+.raffle-ranking h4,
+.raffle-tickets h4,
+.raffle-payment-method h4,
+.raffle-origin h4 {
     font-size: 15px;
     color: #a8a8a8;
     text-transform: uppercase;
@@ -309,12 +350,14 @@ main {
     text-align: -webkit-center;
     margin-bottom: 28px;
 }
+
 .podium {
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 32px;
 }
+
 .rank {
     display: flex;
     flex-direction: column;
@@ -324,12 +367,14 @@ main {
     text-align: -webkit-center;
     margin: 0 26px;
 }
+
 .rank img {
     max-width: 48px;
     width: 100%;
     user-select: none;
     margin-bottom: 10px;
 }
+
 .rank p {
     margin-bottom: 3px;
 }
@@ -341,16 +386,19 @@ main {
     color: #656565;
     margin-top: 28px;
 }
+
 .add-tickets-box {
     max-width: 515px;
     width: 100%;
 }
+
 .add-tickets {
     display: flex;
     justify-content: center;
     color: #e4e4e4;
     user-select: none;
 }
+
 .qty-btn {
     display: flex;
     justify-content: center;
@@ -365,15 +413,18 @@ main {
     margin-right: 15px;
     transition: all 0.2s;
 }
+
 .qty-btn:last-child {
     margin-right: 0;
 }
+
 .qty-btn:hover {
     background-color: #34D894;
     color: #ffffff;
     border: 1px solid #34D894;
     transition: all 0.3s;
 }
+
 .qty-btn:focus {
     outline-color: #e55f5f;
 }
@@ -383,10 +434,12 @@ main {
     display: block;
     margin-top: 7px;
 }
+
 .quantity-box {
     display: flex;
     justify-content: center;
 }
+
 .quantity input {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -397,7 +450,9 @@ main {
     text-align: center;
     text-align: -webkit-center;
 }
-.decrease span, .increase span {
+
+.decrease span,
+.increase span {
     display: flex;
     font-size: 16px;
     text-decoration: none;
@@ -409,6 +464,7 @@ main {
     padding: 7px 20px;
     transition: all 0.2s;
 }
+
 #quantityValue {
     font-size: 16px;
     outline-color: #489f35;
@@ -420,11 +476,13 @@ main {
     width: 100%;
     margin: 0 5px;
 }
+
 .decrease span:hover {
     background-color: #d83434;
     color: #ffffff;
     transition: all 0.3s;
 }
+
 .increase span:hover {
     background-color: #34D894;
     color: #ffffff;
@@ -452,6 +510,7 @@ main {
     z-index: 10;
     transition: all 0.5s;
 }
+
 .purchase-tickets-box {
     position: relative;
     display: flex;
@@ -465,11 +524,13 @@ main {
     max-width: 563px;
     padding: 28px 23px;
 }
+
 .purchase-tickets-box label {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 21px;
 }
+
 .purchase-tickets-box input {
     font-size: 16px;
     outline-color: #39da97;
@@ -479,6 +540,7 @@ main {
     padding: 10px 15px;
     margin-top: 15px;
 }
+
 .purchase-tickets-box button {
     font-size: 15px;
     color: #ffffff;
@@ -493,10 +555,12 @@ main {
     margin-top: 20px;
     transition: opacity 0.2s;
 }
+
 .purchase-tickets-box button:hover {
     opacity: 0.7;
     transition: opacity 0.2s;
 }
+
 #close-purchase-tickets {
     filter: invert(100%) sepia(5%) saturate(18%) hue-rotate(159deg) brightness(102%) contrast(102%);
     position: absolute;
@@ -507,6 +571,7 @@ main {
     user-select: none;
     transition: opacity 0.1s;
 }
+
 #close-purchase-tickets:hover {
     opacity: 0.5;
     transition: opacity 0.1s;
@@ -517,6 +582,7 @@ main {
     align-items: flex-start;
     margin: 26px 10px 0 10px;
 }
+
 .terms input {
     box-sizing: border-box;
     appearance: none;
@@ -530,12 +596,15 @@ main {
     padding: 7px;
     margin: 2px 9px 0 0;
 }
+
 .terms input:checked {
     background: #34d894;
 }
+
 .terms p {
     font-size: 14px;
 }
+
 .terms p a {
     font-size: 14px;
     color: #ffffff;
@@ -557,10 +626,12 @@ main {
     padding: 9px;
     transition: all 0.2s;
 }
+
 .purchase button:hover {
     background-color: #1ca56c;
     transition: all 0.3s;
 }
+
 .purchase-submit-btn {
     display: flex;
     justify-content: center;
@@ -578,6 +649,7 @@ main {
     padding: 9px;
     transition: all 0.2s;
 }
+
 .purchase-submit-btn:hover {
     background-color: #1ca56c;
     transition: all 0.3s;
@@ -592,24 +664,31 @@ main {
 }
 
 
-.raffle-payment-method h4, .raffle-origin h4 {
+.raffle-payment-method h4,
+.raffle-origin h4 {
     text-align: left;
     text-align: -webkit-left;
 }
+
 .raffle-duals {
     display: flex;
 }
-.raffle-payment-method, .raffle-origin {
+
+.raffle-payment-method,
+.raffle-origin {
     width: 100%;
 }
+
 .raffle-payment-method {
     margin-right: 12px;
 }
+
 .raffle-text img {
     user-select: none;
     max-width: 100px;
     width: 100%;
 }
+
 /* Main */
 
 
@@ -617,7 +696,12 @@ main {
     .raffle h2 {
         font-size: 20px;
     }
-    .raffle-description, .raffle-ranking, .raffle-tickets, .raffle-payment-method, .raffle-origin {
+
+    .raffle-description,
+    .raffle-ranking,
+    .raffle-tickets,
+    .raffle-payment-method,
+    .raffle-origin {
         font-size: 15px;
     }
 
@@ -626,6 +710,7 @@ main {
         font-size: 14px;
         padding: 10px 20px;
     }
+
     .my-tickets a img {
         height: 14px;
     }
@@ -635,14 +720,16 @@ main {
         font-size: 13px;
         padding: 8px 17px;
     }
-    
+
 
     .podium {
         justify-content: space-between;
     }
+
     .rank {
         margin: 0 5px;
     }
+
     .rank p {
         font-size: 13px;
     }
@@ -653,9 +740,11 @@ main {
     .search-tickets-box label {
         font-size: 16px;
     }
+
     .search-tickets-box input {
         font-size: 14px;
     }
+
     .search-tickets-box button {
         font-size: 14px;
     }
@@ -664,11 +753,20 @@ main {
     .raffle h2 {
         font-size: 18px;
     }
-    .raffle-description, .raffle-ranking, .raffle-tickets, .raffle-payment-method, .raffle-origin {
+
+    .raffle-description,
+    .raffle-ranking,
+    .raffle-tickets,
+    .raffle-payment-method,
+    .raffle-origin {
         font-size: 12px;
     }
 
-    .raffle-description h4, .raffle-ranking h4, .raffle-tickets h4, .raffle-payment-method h4, .raffle-origin h4 {
+    .raffle-description h4,
+    .raffle-ranking h4,
+    .raffle-tickets h4,
+    .raffle-payment-method h4,
+    .raffle-origin h4 {
         font-size: 13px;
     }
 
@@ -677,6 +775,7 @@ main {
         font-size: 13px;
         padding: 10px 20px;
     }
+
     .my-tickets a img {
         height: 13px;
     }
@@ -686,11 +785,12 @@ main {
         font-size: 12px;
         padding: 8px 17px;
     }
-    
+
 
     .organizer-info p {
         font-size: 12px;
     }
+
     .organizer-info h4 {
         font-size: 14px;
     }
@@ -702,9 +802,11 @@ main {
     .podium {
         justify-content: space-between;
     }
+
     .rank {
         margin: 0 5px;
     }
+
     .rank p {
         font-size: 12px;
     }
@@ -712,6 +814,7 @@ main {
     .qty-btn {
         font-size: 14px;
     }
+
     .purchase button {
         font-size: 14px;
     }
@@ -719,12 +822,16 @@ main {
     .purchase-tickets-box label {
         font-size: 16px;
     }
+
     .purchase-tickets-box input {
         font-size: 14px;
     }
-    .terms p, .terms p a {
+
+    .terms p,
+    .terms p a {
         font-size: 12px;
     }
+
     .purchase-submit-btn {
         font-size: 14px;
     }

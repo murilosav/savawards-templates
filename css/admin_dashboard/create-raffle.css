@@ -1,0 +1,141 @@
+:root {
+  --primary-color: #ffffff;
+  --primary-dark: #1ca56c;
+  --background-body: #18262d;
+  --background-card: #152126;
+  --text: #f0f0f0;
+  --text-muted: #bbb;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-body);
+  padding: 0.7rem;
+  color: var(--text);
+}
+
+.container {
+  max-width: 850px;
+  background-color: var(--background-card);
+  margin: auto;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid #373737;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #1e2f37;
+  border: 1px solid #2e3e44;
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type="file"] {
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.checkbox-group,
+.payment-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-group label,
+.payment-options label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+}
+
+.preview-img {
+  max-width: 200px;
+  margin-top: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid #333;
+  display: none;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.social input {
+  margin-bottom: 10px;
+}
+
+.social input:last-child {
+  margin-bottom: 0;
+}
+
+button {
+  background-color: var(--primary-dark);
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}

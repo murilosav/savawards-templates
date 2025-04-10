@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Savawards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_dashboard/dashboard-admin.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Savawards</h2>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="./create-raffle.html">Criar Nova Rifa</a></li>
+      <li><a href="./list-raffles.html">Listar Rifas</a></li>
+      <li><a href="./participants.html">Participantes</a></li>
+      <li><a href="./payments.html">Pagamentos</a></li>
+      <li><a href="./prize-draw.html">Sorteios</a></li>
+      <li><a href="./configuration.html">Configurações</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1>Admin - Painel de Controle</h1>
+    <div class="cards">
+      <div class="card">
+        <h3>Rifas Criadas</h3>
+        <p>25</p>
+      </div>
+      <div class="card">
+        <h3>Total Arrecadado</h3>
+        <p>R$ 18.320,00</p>
+      </div>
+      <div class="card">
+        <h3>Participantes</h3>
+        <p>320</p>
+      </div>
+      <div class="card">
+        <h3>Prêmios Enviados</h3>
+        <p>22</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Rifas Recentes</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Preço</th>
+              <th>Ingressos</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>iPhone 14 Pro</td>
+              <td>R$ 10,00</td>
+              <td>500</td>
+              <td>Ativa</td>
+              <td><button class="btn">Editar</button></td>
+            </tr>
+            <tr>
+              <td>PlayStation 5</td>
+              <td>R$ 8,00</td>
+              <td>400</td>
+              <td>Finalizada</td>
+              <td><button class="btn">Ver</button></td>
+            </tr>
+            <tr>
+              <td>TV 65" 4K</td>
+              <td>R$ 7,00</td>
+              <td>600</td>
+              <td>Ativa</td>
+              <td><button class="btn">Editar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Pagamentos Recentes</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Participante</th>
+              <th>Rifa</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lucas Lima</td>
+              <td>iPhone 14 Pro</td>
+              <td>R$ 20,00</td>
+              <td>Pago</td>
+              <td>21/06/2024</td>
+            </tr>
+            <tr>
+              <td>Fernanda Alves</td>
+              <td>TV 65" 4K</td>
+              <td>R$ 14,00</td>
+              <td>Pendente</td>
+              <td>20/06/2024</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagamentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_dashboard/payments.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Pagamentos Recebidos</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Buscar por nome ou email">
+      <select id="statusFilter">
+        <option value="">Todos os Status</option>
+        <option value="approved">Aprovado</option>
+        <option value="pending">Pendente</option>
+        <option value="cancelled">Cancelado</option>
+      </select>
+      <select id="paymentMethodFilter">
+        <option value="">Todos os Métodos</option>
+        <option value="Pix">Pix</option>
+        <option value="Card">Cartão</option>
+        <option value="Boleto">Boleto</option>
+      </select>
+      <select id="raffleFilter">
+        <option value="">Todas as Rifas</option>
+        <option value="Playstation 5">Playstation 5</option>
+        <option value="iPhone 15">iPhone 15</option>
+        <option value="Nintendo Switch">Nintendo Switch</option>
+      </select>
+      <button class="export-btn" id="exportBtn">Exportar CSV</button>
+    </div>
+
+    <table id="paymentsTable">
+      <thead>
+        <tr>
+          <th>Participante</th>
+          <th>Email</th>
+          <th>Rifa</th>
+          <th>Valor</th>
+          <th>Método</th>
+          <th>Status</th>
+          <th>Data</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="paymentsTableBody">
+        <!-- Os dados serão carregados dinamicamente -->
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal" id="detailsModal">
+    <div class="modal__content">
+      <span class="modal__close" id="closeModalBtn">&times;</span>
+      <h2>Detalhes do Pagamento</h2>
+      <p><strong>Nome:</strong> <span id="modalName"></span></p>
+      <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+      <p><strong>Valor:</strong> <span id="modalAmount"></span></p>
+      <p><strong>Método:</strong> <span id="modalPaymentMethod"></span></p>
+      <p><strong>Data:</strong> <span id="modalDate"></span></p>
+    </div>
+  </div>
+
+  <script>
+    // Payment data storage
+    let allPayments = [];
+    let filteredPayments = [];
+
+    // DOM Elements
+    const elements = {
+      searchInput: document.getElementById('searchInput'),
+      statusFilter: document.getElementById('statusFilter'),
+      paymentMethodFilter: document.getElementById('paymentMethodFilter'),
+      raffleFilter: document.getElementById('raffleFilter'),
+      exportBtn: document.getElementById('exportBtn'),
+      paymentsTableBody: document.getElementById('paymentsTableBody'),
+      detailsModal: document.getElementById('detailsModal'),
+      closeModalBtn: document.getElementById('closeModalBtn'),
+      modalName: document.getElementById('modalName'),
+      modalEmail: document.getElementById('modalEmail'),
+      modalAmount: document.getElementById('modalAmount'),
+      modalPaymentMethod: document.getElementById('modalPaymentMethod'),
+      modalDate: document.getElementById('modalDate')
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchPayments();
+      setupEventListeners();
+    });
+
+    // Fetch payments from backend
+    function fetchPayments() {
+      // Em um aplicativo real, isso seria um fetch() para sua API
+      const mockPayments = [
+        {
+          id: 1,
+          participant: 'João da Silva',
+          email: 'joao@email.com',
+          raffle: 'Playstation 5',
+          amount: 'R$ 30,00',
+          paymentMethod: 'Pix',
+          status: 'approved',
+          date: '20/06/2024'
+        },
+        {
+          id: 2,
+          participant: 'Maria Souza',
+          email: 'maria@email.com',
+          raffle: 'iPhone 15',
+          amount: 'R$ 50,00',
+          paymentMethod: 'Card',
+          status: 'pending',
+          date: '21/06/2024'
+        }
+      ];
+
+      allPayments = mockPayments;
+      filteredPayments = [...allPayments];
+      renderPayments();
+    }
+
+    // Render payments to table
+    function renderPayments() {
+      elements.paymentsTableBody.innerHTML = '';
+
+      filteredPayments.forEach(payment => {
+        const row = document.createElement('tr');
+        row.dataset.status = payment.status;
+        row.dataset.paymentMethod = payment.paymentMethod;
+        row.dataset.raffle = payment.raffle;
+
+        row.innerHTML = `
+          <td data-label="Participante">${payment.participant}</td>
+          <td data-label="Email">${payment.email}</td>
+          <td data-label="Rifa">${payment.raffle}</td>
+          <td data-label="Valor">${payment.amount}</td>
+          <td data-label="Método">${payment.paymentMethod}</td>
+          <td data-label="Status">
+            <span class="status status--${payment.status}">
+              ${getStatusText(payment.status)}
+            </span>
+          </td>
+          <td data-label="Data">${payment.date}</td>
+          <td data-label="Ação">
+            <button class="details-btn" data-id="${payment.id}">Detalhes</button>
+          </td>
+        `;
+
+        elements.paymentsTableBody.appendChild(row);
+      });
+
+      // Add event listeners to detail buttons
+      document.querySelectorAll('.details-btn').forEach(btn => {
+        btn.addEventListener('click', () => showPaymentDetails(btn.dataset.id));
+      });
+    }
+
+    // Filter payments based on criteria
+    function filterPayments() {
+      const searchTerm = elements.searchInput.value.toLowerCase();
+      const status = elements.statusFilter.value;
+      const paymentMethod = elements.paymentMethodFilter.value;
+      const raffle = elements.raffleFilter.value;
+
+      filteredPayments = allPayments.filter(payment => {
+        const matchesSearch =
+          payment.participant.toLowerCase().includes(searchTerm) ||
+          payment.email.toLowerCase().includes(searchTerm);
+
+        const matchesStatus = !status || payment.status === status;
+        const matchesPaymentMethod = !paymentMethod || payment.paymentMethod === paymentMethod;
+        const matchesRaffle = !raffle || payment.raffle === raffle;
+
+        return matchesSearch && matchesStatus && matchesPaymentMethod && matchesRaffle;
+      });
+
+      renderPayments();
+    }
+
+    // Show payment details in modal
+    function showPaymentDetails(paymentId) {
+      const payment = allPayments.find(p => p.id == paymentId);
+      if (!payment) return;
+      
+      elements.modalName.textContent = payment.participant;
+      elements.modalEmail.textContent = payment.email;
+      elements.modalAmount.textContent = payment.amount;
+      elements.modalPaymentMethod.textContent = payment.paymentMethod;
+      elements.modalDate.textContent = payment.date;
+
+      elements.detailsModal.style.display = 'flex';
+    }
+
+    // Close modal
+    function closeModal() {
+      elements.detailsModal.style.display = 'none';
+    }
+
+    // Export to CSV
+    function exportToCSV() {
+      const headers = ['Participante', 'Email', 'Rifa', 'Valor', 'Método', 'Status', 'Data'];
+      const rows = filteredPayments.map(payment => [
+        payment.participant,
+        payment.email,
+        payment.raffle,
+        payment.amount,
+        payment.paymentMethod,
+        getStatusText(payment.status),
+        payment.date
+      ]);
+
+      let csv = headers.join(',') + '\n';
+      csv += rows.map(row => row.join(',')).join('\n');
+
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'pagamentos.csv';
+      link.click();
+    }
+
+    // Helper functions
+    function getStatusText(status) {
+      const statusMap = {
+        'approved': 'Aprovado',
+        'pending': 'Pendente',
+        'cancelled': 'Cancelado'
+      };
+      return statusMap[status] || status;
+    }
+
+    function setupEventListeners() {
+      elements.searchInput.addEventListener('input', filterPayments);
+      elements.statusFilter.addEventListener('change', filterPayments);
+      elements.paymentMethodFilter.addEventListener('change', filterPayments);
+      elements.raffleFilter.addEventListener('change', filterPayments);
+      elements.exportBtn.addEventListener('click', exportToCSV);
+      elements.closeModalBtn.addEventListener('click', closeModal);
+    }
+  </script>
+</body>
+
+</html>

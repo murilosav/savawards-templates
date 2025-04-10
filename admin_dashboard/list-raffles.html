@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Listar Rifas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_dashboard/list-raffles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <h1>Rifas Cadastradas</h1>
+      <a href="/admin/rifas/nova" class="btn">+ Nova Rifa</a>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Status</th>
+          <th>Preço</th>
+          <th>Qtd. Números</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>Rifa do iPhone 14</td>
+          <td><span class="status ativa">Ativa</span></td>
+          <td>R$ 10,00</td>
+          <td>1000</td>
+          <td class="actions">
+            <a href="/admin/rifas/1/editar" class="btn">Editar</a>
+            <a href="/admin/rifas/1" class="btn">Ver</a>
+          </td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Rifa da Smart TV</td>
+          <td><span class="status encerrada">Encerrada</span></td>
+          <td>R$ 5,00</td>
+          <td>500</td>
+          <td class="actions">
+            <a href="/admin/rifas/2/editar" class="btn">Editar</a>
+            <a href="/admin/rifas/2" class="btn">Ver</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

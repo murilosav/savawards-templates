@@ -37,6 +37,10 @@
                     <span>Valor do Pix:</span>
                     <strong>R$ 405,95</strong>
                 </div>
+                <div id="copy-mobile" class="pix-copy-mobile">
+                    <img src="./images/icons/copy-icon.svg" alt="Copiar" draggable="false">
+                    <span>Copiar código</span>
+                </div>
                 <div class="pix-copy-and-past">
                     <span>Você também pode pagar escolhendo a opção <b>Pix Copia e Cola</b> no seu aplicativo de pagamento ou Internet Banking (banco online). Neste caso, copie o código abaixo:</span>
                     <div class="qrcode-text">
@@ -50,24 +54,28 @@
     </main>
 
     <script>
-        document.getElementById('copy').addEventListener('click', function() {
+        // Copy qrcode
+        document.getElementById('copy').addEventListener('click', copyText);
+        document.getElementById('copy-mobile').addEventListener('touchstart', copyText);
+    
+        function copyText() {
             var qrcodeText = document.getElementById('qrcode-text');
             var copiedCodeBox = document.getElementById('copied-code');
+            
             navigator.clipboard.writeText(qrcodeText.textContent).then(function() {
                 qrcodeText.style.filter = 'blur(1px)';
-
                 copiedCodeBox.style.visibility = 'visible';
                 copiedCodeBox.style.opacity = '0.9';
                 copiedCodeBox.style.transition = 'all 0.3s';
-
+            
                 // remove style after 2s
                 setTimeout(function() {
-                qrcodeText.style.filter = '';
-                copiedCodeBox.style.visibility = '';
-                copiedCodeBox.style.opacity = '';
+                    qrcodeText.style.filter = '';
+                    copiedCodeBox.style.visibility = '';
+                    copiedCodeBox.style.opacity = '';
                 }, 1000);
             });
-        });
+        }
     </script>
 </body>
 </html>

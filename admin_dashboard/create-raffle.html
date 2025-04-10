@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Criar Nova Rifa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_dashboard/create-raffle.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Criar Nova Rifa</h1>
+    <form>
+      <div class="form-group">
+        <label for="raffle-name">Nome da Rifa</label>
+        <input type="text" id="raffle-name" name="raffle_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="raffle-description">Descrição</label>
+        <textarea id="raffle-description" name="raffle_description" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="raffle-image">Imagem da Rifa</label>
+          <input type="file" id="raffle-image" name="raffle_image" accept="image/*"
+            onchange="previewImage(this, 'raffle-image-preview')">
+          <img id="raffle-image-preview" class="preview-img" style="display:none;">
+        </div>
+
+        <div class="form-group">
+          <label for="ticket-quantity">Quantidade de Números</label>
+          <input type="number" id="ticket-quantity" name="ticket_quantity" min="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="ticket-price">Valor por Número (R$)</label>
+          <input type="number" id="ticket-price" name="ticket_price" step="0.01" required>
+        </div>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" id="show-leaderboard" name="show_leaderboard" checked>
+          Exibir classificação dos colaboradores
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Métodos de Pagamento</label>
+        <div class="payment-options">
+          <label><input type="checkbox" name="payment_pix" checked> Pix</label>
+          <label><input type="checkbox" name="payment_card"> Cartão de Crédito</label>
+          <label><input type="checkbox" name="payment_boleto"> Boleto</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="organizer-name">Nome do Organizador</label>
+          <input type="text" id="organizer-name" name="organizer_name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="organizer-photo">Foto do Organizador</label>
+          <input type="file" id="organizer-photo" name="organizer_photo" accept="image/*"
+            onchange="previewImage(this, 'organizer-photo-preview')">
+          <img id="organizer-photo-preview" class="preview-img" style="display:none;">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Links de Contato (opcional)</label>
+        <div class="social">
+          <input type="url" name="whatsapp_link" placeholder="Link do WhatsApp">
+          <input type="url" name="telegram_link" placeholder="Link do Telegram">
+          <input type="url" name="instagram_link" placeholder="Link do Instagram">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">Criar Rifa</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function previewImage(input, previewId) {
+      const preview = document.getElementById(previewId);
+      const file = input.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  </script>
+</body>
+</html>

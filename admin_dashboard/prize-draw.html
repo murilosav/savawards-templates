@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorteios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_dashboard/prize-draw.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sorteios</h1>
+
+    <div class="form-group">
+      <label for="raffleSelect">Selecione uma Rifa</label>
+      <select id="raffleSelect">
+        <option value="">Selecione uma rifa</option>
+        <option value="1">Rifa do iPhone</option>
+        <option value="2">Rifa da Moto</option>
+      </select>
+    </div>
+
+    <div class="form-actions">
+      <button onclick="drawWinner()">Realizar Sorteio</button>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: #2e3e44;" />
+
+    <h2>Sorteios Realizados</h2>
+    <div id="drawResults">
+      <!-- Sorteios inseridos dinamicamente -->
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal__content">
+      <h2>Detalhes do Sorteio</h2>
+      <div id="modalContent"></div>
+      <div class="form-actions">
+        <button onclick="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function drawWinner() {
+      const raffleSelect = document.getElementById("raffleSelect");
+      const raffleValue = raffleSelect.value;
+
+      if (!raffleValue) {
+        alert("Selecione uma rifa antes de realizar o sorteio.");
+        return;
+      }
+
+      const winnerName = "Maria Oliveira";
+      const number = Math.floor(Math.random() * 1000);
+      const raffleName = raffleSelect.options[raffleSelect.selectedIndex].text;
+
+      const drawItem = document.createElement("div");
+      drawItem.className = "draw-item";
+      drawItem.innerHTML = `
+        <strong>Rifa:</strong> ${raffleName}<br />
+        <strong>Data:</strong> ${new Date().toLocaleDateString()}<br />
+        <strong>Vencedor:</strong> ${winnerName}<br />
+        <button onclick="viewDrawDetails('${winnerName}', '${raffleName}', 'Número: ${number}')">Detalhes</button>
+      `;
+
+      document.getElementById("drawResults").prepend(drawItem);
+    }
+
+    function viewDrawDetails(name, raffle, details) {
+      document.getElementById("modalContent").innerHTML = `
+        <p><strong>Rifa:</strong> ${raffle}</p>
+        <p><strong>Vencedor:</strong> ${name}</p>
+        <p>${details}</p>
+      `;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

@@ -19,20 +19,24 @@ header {
     background-color: #152126;
     border-bottom: 1px solid #373737;
 }
+
 .logo a {
     display: flex;
     user-select: none;
     padding: 20px;
 }
+
 .logo img {
     height: 28px;
     max-width: 300px;
     transition: all 0.2s;
 }
+
 .logo img:hover {
     filter: grayscale(1);
     transition: all 0.2s;
 }
+
 /* End Header */
 
 
@@ -42,6 +46,7 @@ main {
     justify-content: center;
     margin: 46px 14px 90px 14px;
 }
+
 .main-container {
     max-width: 990px;
     width: 100%;
@@ -52,6 +57,7 @@ main {
     display: flex;
     justify-content: center;
 }
+
 .information-list {
     max-width: 800px;
     width: 100%;
@@ -59,14 +65,18 @@ main {
     border-radius: 14px;
     padding: 12px;
 }
+
 .info {
     border-bottom: 1px solid #d0d0d0;
     padding: 21px 14px;
 }
-.info span, b {
+
+.info span,
+b {
     font-size: 16px;
     color: #373737;
 }
+
 .see-tickets {
     display: flex;
     justify-content: center;
@@ -81,6 +91,7 @@ main {
     margin-top: 12px;
     transition: all 0.2s;
 }
+
 .see-tickets:hover {
     background-color: #f3f3f3;
     color: #000000;
@@ -98,6 +109,7 @@ main {
     justify-content: center;
     transition: margin 0.4s;
 }
+
 .ticket-numbers p {
     font-size: 15px;
     color: #474747;
@@ -109,9 +121,11 @@ main {
     padding: 8px;
     margin: 0 5px 5px 0;
 }
+
 .ticket-numbers p:last-child {
     margin-right: 0;
 }
+
 .visible {
     height: max-content;
     visibility: visible;
@@ -128,6 +142,7 @@ main {
     text-align: -webkit-center;
     text-decoration: none;
 }
+
 .purchase span {
     font-size: 18px;
     font-weight: 500;
@@ -143,10 +158,12 @@ main {
     margin-top: 20px;
     transition: all 0.2s;
 }
+
 .purchase span:hover {
     background-color: #168a5b;
     transition: all 0.3s;
 }
+
 /* Main */
 
 

@@ -1,0 +1,78 @@
+:root {
+  --primary-color: #ffffff;
+  --primary-dark: #1ca56c;
+  --background-body: #18262d;
+  --background-card: #152126;
+  --text: #f0f0f0;
+  --text-muted: #bbb;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-body);
+  padding: 0.7rem;
+  color: var(--text);
+}
+
+.container {
+  max-width: 800px;
+  background-color: var(--background-card);
+  margin: auto;
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid #373737;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--text-muted);
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: var(--radius);
+  border: 1px solid #2e3e44;
+  background-color: #1e2f37;
+  color: var(--text);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-btn {
+  background-color: var(--primary-dark);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.save-btn:hover {
+  background-color: #17975f;
+}

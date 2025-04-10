@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Configurações</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin_dashboard/configuration.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Configurações</h1>
+
+    <form id="settingsForm" onsubmit="saveSettings(event)">
+      <div class="form-group">
+        <label for="siteName">Nome do Site</label>
+        <input type="text" id="siteName" placeholder="Ex: Rifa Premiada">
+      </div>
+
+      <div class="form-group">
+        <label for="contactEmail">Email de Contato</label>
+        <input type="email" id="contactEmail" placeholder="Ex: contato@rifapremiada.com">
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status da Plataforma</label>
+        <select id="status">
+          <option value="ativo">Ativo</option>
+          <option value="inativo">Inativo</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="save-btn">Salvar Configurações</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function saveSettings(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("siteName").value;
+      const email = document.getElementById("contactEmail").value;
+      const status = document.getElementById("status").value;
+
+      console.log("Configurações salvas:");
+      console.log("Nome do Site:", nome);
+      console.log("Email:", email);
+      console.log("Status:", status);
+
+      alert("Configurações salvas com sucesso!");
+    }
+  </script>
+</body>
+
+</html>
